@@ -2,6 +2,8 @@
 
 This repository contains template a template for new elements.
 
+Check out different branches for other flavours of template
+
 # Installation
 
 Add the following line to your `deps` in `mix.exs`.  Run `mix deps.get`.
