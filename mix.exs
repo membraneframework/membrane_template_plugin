@@ -9,6 +9,7 @@ defmodule Membrane.Element.Template.Mixfile do
       app: :membrane_element_template,
       version: @version,
       elixir: "~> 1.7",
+      compilers: [:unifex, :bundlex] ++ Mix.compilers(),
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -37,6 +38,8 @@ defmodule Membrane.Element.Template.Mixfile do
   defp deps do
     [
       {:membrane_core, "~> 0.4.1"},
+      {:membrane_common_c, "~> 0.2.4"},
+      {:unifex, "0.2.5"},
       {:ex_doc, "~> 0.21", only: :dev, runtime: false},
       {:dialyxir, "~> 1.0.0-rc.7", only: :dev, runtime: false},
     ]
@@ -49,7 +52,8 @@ defmodule Membrane.Element.Template.Mixfile do
       links: %{
         "GitHub" => @github_url,
         "Membrane Framework Homepage" => "https://membraneframework.org"
-      }
+      },
+      files: ["lib", "mix.exs", "README*", "LICENSE*", ".formatter.exs", "bundlex.exs", "c_src"]
     ]
   end
 
