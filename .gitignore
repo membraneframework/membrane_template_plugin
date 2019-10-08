@@ -1,5 +1,10 @@
+compile_commands.json
+.gdb_history
+bundlex.sh
+bundlex.bat
 
-# Created by https://www.gitignore.io/api/c,vim,c++,code,elixir
+# Created by https://www.gitignore.io/api/c,vim,linux,macos,elixir,windows,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=c,vim,linux,macos,elixir,windows,visualstudiocode
 
 ### C ###
 # Prerequisites
@@ -55,32 +60,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-### C++ ###
-# Prerequisites
-
-# Compiled Object files
-*.slo
-
-# Precompiled Headers
-
-# Compiled Dynamic libraries
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-
-# Executables
-
-### Code ###
-# Visual Studio Code - https://code.visualstudio.com/
-.settings/
-.vscode/
-tsconfig.json
-jsconfig.json
-
 ### Elixir ###
 /_build
 /cover
@@ -90,24 +69,108 @@ jsconfig.json
 erl_crash.dump
 *.ez
 *.beam
+/config/*.secret.exs
+.elixir_ls/
 
 ### Elixir Patch ###
-### Vim ###
-# swap
-.sw[a-p]
-.*.sw[a-p]
-# session
-Session.vim
-# temporary
-.netrwhist
+
+### Linux ###
 *~
-# auto-generated tag files
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Vim ###
+# Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Session
+Session.vim
+Sessionx.vim
+
+# Temporary
+.netrwhist
+# Auto-generated tag files
 tags
+# Persistent undo
+[._]*.un~
 
-# End of https://www.gitignore.io/api/c,vim,c++,code,elixir
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# Membrane specific
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
 
-/bundlex*
-/test*
-/priv
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# End of https://www.gitignore.io/api/c,vim,linux,macos,elixir,windows,visualstudiocode

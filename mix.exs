@@ -1,37 +1,64 @@
 defmodule Membrane.Element.Template.Mixfile do
   use Mix.Project
 
-  def project do
-    [app: :membrane_element_template,
-     compilers: Mix.compilers,
-     version: "0.0.1",
-     elixir: "~> 1.3",
-     elixirc_paths: elixirc_paths(Mix.env),
-     description: "Membrane Multimedia Framework (Element Template)",
-     maintainers: ["YOUR NAME HERE"],
-     licenses: ["MIT"],
-     name: "Membrane Element: Template",
-     source_url: "https://github.com/membraneframework/membrane-element-template",
-     preferred_cli_env: [espec: :test],
-     deps: deps()]
-  end
+  @version "0.1.0"
+  @github_url "https://github.com/membraneframework/membrane-element-template"
 
+  def project do
+    [
+      app: :membrane_element_template,
+      version: @version,
+      elixir: "~> 1.7",
+      elixirc_paths: elixirc_paths(Mix.env()),
+      start_permanent: Mix.env() == :prod,
+      deps: deps(),
+
+      # hex
+      description: "Template Element for Membrane Multimedia Framework",
+      package: package(),
+
+      # docs
+      name: "Membrane Element: Template",
+      source_url: @github_url,
+      homepage_url: "https://membraneframework.org",
+      docs: docs()
+    ]
+  end
 
   def application do
-    [applications: [
-      :membrane_core,
-    ], mod: {Membrane.Element.Template, []}]
+    [
+      extra_applications: []
+    ]
   end
 
-
-  defp elixirc_paths(:test), do: ["lib", "spec/support"]
-  defp elixirc_paths(_),     do: ["lib",]
-
+  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(_env), do: ["lib"]
 
   defp deps do
     [
-      {:membrane_core, git: "git@github.com:membraneframework/membrane-core.git", branch: "v0.1"},
-      # {:membrane_core, path: "/path/to/local/membrane_core/version", override: true},
+      {:membrane_core, "~> 0.4.1"},
+      {:ex_doc, "~> 0.21", only: :dev, runtime: false},
+      {:dialyxir, "~> 1.0.0-rc.7", only: :dev, runtime: false},
+    ]
+  end
+
+  defp package do
+    [
+      maintainers: ["Membrane Team"],
+      licenses: ["Apache 2.0"],
+      links: %{
+        "GitHub" => @github_url,
+        "Membrane Framework Homepage" => "https://membraneframework.org"
+      }
+    ]
+  end
+
+  defp docs do
+    [
+      main: "readme",
+      extras: ["README.md"],
+      source_ref: "v#{@version}",
+      nest_modules_by_prefix: [Membrane.Element]
     ]
   end
 end
