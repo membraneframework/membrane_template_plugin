@@ -1,7 +1,8 @@
 #pragma once
 
+#define MEMBRANE_LOG_TAG "Membrane.Template.Native"
+
 #include <membrane/membrane.h>
-#define MEMBRANE_LOG_TAG "Membrane.Element.Template.Native"
 #include <membrane/log.h>
 
 typedef struct _NativeState UnifexNifState;

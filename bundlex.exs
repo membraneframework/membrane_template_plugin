@@ -11,7 +11,7 @@ defmodule Membrane.Element.Template.BundlexProject do
     [
       native: [
         sources: ["native.c", "_generated/native.c"],
-        deps: [membrane_common_c: :membrane, unifex: :unifex],
+        deps: [membrane_common_c: :membrane, unifex: :unifex]
       ]
     ]
   end

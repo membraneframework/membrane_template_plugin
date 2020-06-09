@@ -7,6 +7,8 @@ This repository contains template a template for new elements.
 
 Check out different branches for other flavours of template
 
+It is part of [Membrane Multimedia Framework](https://membraneframework.org).
+
 ## Installation
 
 The package can be installed by adding `membrane_element_template` to your list of dependencies in `mix.exs`:
@@ -25,8 +27,8 @@ TODO
 
 ## Copyright and License
 
-Copyright 2019, [Software Mansion](https://swmansion.com/?utm_source=git&utm_medium=readme&utm_campaign=membrane-element-template)
+Copyright 2020, [Software Mansion](https://swmansion.com/?utm_source=git&utm_medium=readme&utm_campaign=membrane-element-template)
 
-[![Software Mansion](https://membraneframework.github.io/static/logo/swm_logo_readme.png)](https://swmansion.com/?utm_source=git&utm_medium=readme&utm_campaign=membrane-element-template)
+[![Software Mansion](https://logo.swmansion.com/logo?color=white&variant=desktop&width=200&tag=membrane-github)](https://swmansion.com/?utm_source=git&utm_medium=readme&utm_campaign=membrane-element-template)
 
 Licensed under the [Apache License, Version 2.0](LICENSE)

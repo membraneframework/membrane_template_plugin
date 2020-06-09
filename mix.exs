@@ -1,14 +1,14 @@
-defmodule Membrane.Element.Template.Mixfile do
+defmodule Membrane.Template.Mixfile do
   use Mix.Project
 
   @version "0.1.0"
-  @github_url "https://github.com/membraneframework/membrane-element-template"
+  @github_url "https://github.com/membraneframework/membrane_element_template"
 
   def project do
     [
       app: :membrane_element_template,
       version: @version,
-      elixir: "~> 1.7",
+      elixir: "~> 1.9",
       compilers: [:unifex, :bundlex] ++ Mix.compilers(),
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
@@ -37,11 +37,11 @@ defmodule Membrane.Element.Template.Mixfile do
 
   defp deps do
     [
-      {:membrane_core, "~> 0.4.1"},
-      {:membrane_common_c, "~> 0.2.4"},
-      {:unifex, "0.2.5"},
-      {:ex_doc, "~> 0.21", only: :dev, runtime: false},
-      {:dialyxir, "~> 1.0.0-rc.7", only: :dev, runtime: false},
+      {:membrane_core, "~> 0.5.0"},
+      {:membrane_common_c, "~> 0.3.0"},
+      {:unifex, "~> 0.2.6"},
+      {:ex_doc, "~> 0.22", only: :dev, runtime: false},
+      {:dialyxir, "~> 1.0.0", only: :dev, runtime: false}
     ]
   end
 
@@ -62,7 +62,7 @@ defmodule Membrane.Element.Template.Mixfile do
       main: "readme",
       extras: ["README.md"],
       source_ref: "v#{@version}",
-      nest_modules_by_prefix: [Membrane.Element]
+      nest_modules_by_prefix: [Membrane.Template]
     ]
   end
 end

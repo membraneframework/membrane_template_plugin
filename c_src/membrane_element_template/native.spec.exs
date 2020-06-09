@@ -1,1 +1,1 @@
-module Membrane.Element.Template.Native
+module Membrane.Template.Native
