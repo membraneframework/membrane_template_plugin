@@ -1,7 +1,7 @@
-# Membrane Multimedia Framework: Element Template
+# Membrane Multimedia Framework: Template Plugin
 
-[![Hex.pm](https://img.shields.io/hexpm/v/membrane_element_template.svg)](https://hex.pm/packages/membrane_element_template)
-[![CircleCI](https://circleci.com/gh/membraneframework/membrane-element-template.svg?style=svg)](https://circleci.com/gh/membraneframework/membrane-element-template)
+[![Hex.pm](https://img.shields.io/hexpm/v/membrane_template_plugin.svg)](https://hex.pm/packages/membrane_template_plugin)
+[![CircleCI](https://circleci.com/gh/membraneframework/membrane_template_plugin.svg?style=svg)](https://circleci.com/gh/membraneframework/membrane_template_plugin)
 
 This repository contains template a template for new elements.
 
@@ -11,12 +11,12 @@ It is part of [Membrane Multimedia Framework](https://membraneframework.org).
 
 ## Installation
 
-The package can be installed by adding `membrane_element_template` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `membrane_template_plugin` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:membrane_element_template, "~> 0.1.0"}
+    {:membrane_template_plugin, "~> 0.1.0"}
   ]
 end
 ```
@@ -27,8 +27,8 @@ TODO
 
 ## Copyright and License
 
-Copyright 2020, [Software Mansion](https://swmansion.com/?utm_source=git&utm_medium=readme&utm_campaign=membrane-element-template)
+Copyright 2020, [Software Mansion](https://swmansion.com/?utm_source=git&utm_medium=readme&utm_campaign=membrane_template_plugin)
 
-[![Software Mansion](https://logo.swmansion.com/logo?color=white&variant=desktop&width=200&tag=membrane-github)](https://swmansion.com/?utm_source=git&utm_medium=readme&utm_campaign=membrane-element-template)
+[![Software Mansion](https://logo.swmansion.com/logo?color=white&variant=desktop&width=200&tag=membrane-github)](https://swmansion.com/?utm_source=git&utm_medium=readme&utm_campaign=membrane_template_plugin)
 
 Licensed under the [Apache License, Version 2.0](LICENSE)

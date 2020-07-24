@@ -2,11 +2,11 @@ defmodule Membrane.Template.Mixfile do
   use Mix.Project
 
   @version "0.1.0"
-  @github_url "https://github.com/membraneframework/membrane_element_template"
+  @github_url "https://github.com/membraneframework/membrane_template_plugin"
 
   def project do
     [
-      app: :membrane_element_template,
+      app: :membrane_template_plugin,
       version: @version,
       elixir: "~> 1.9",
       compilers: [:unifex, :bundlex] ++ Mix.compilers(),
@@ -15,11 +15,11 @@ defmodule Membrane.Template.Mixfile do
       deps: deps(),
 
       # hex
-      description: "Template Element for Membrane Multimedia Framework",
+      description: "Template Plugin for Membrane Multimedia Framework",
       package: package(),
 
       # docs
-      name: "Membrane Element: Template",
+      name: "Membrane Plugin: Template",
       source_url: @github_url,
       homepage_url: "https://membraneframework.org",
       docs: docs()
@@ -37,7 +37,7 @@ defmodule Membrane.Template.Mixfile do
 
   defp deps do
     [
-      {:membrane_core, "~> 0.5.0"},
+      {:membrane_core, "~> 0.5.1"},
       {:membrane_common_c, "~> 0.3.0"},
       {:unifex, "~> 0.2.6"},
       {:ex_doc, "~> 0.22", only: :dev, runtime: false},
