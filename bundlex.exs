@@ -3,15 +3,17 @@ defmodule Membrane.Element.Template.BundlexProject do
 
   def project do
     [
-      nifs: nifs(Bundlex.platform())
+      natives: natives(Bundlex.platform())
     ]
   end
 
-  defp nifs(_platform) do
+  defp natives(_platform) do
     [
       native: [
-        sources: ["native.c", "_generated/native.c"],
-        deps: [membrane_common_c: :membrane, unifex: :unifex]
+        sources: ["native.c"],
+        deps: [unifex: :unifex],
+        interface: [:nif, :cnode],
+        preprocessor: Unifex
       ]
     ]
   end
