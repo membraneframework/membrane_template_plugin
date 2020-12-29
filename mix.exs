@@ -18,7 +18,7 @@ defmodule Membrane.Template.Mixfile do
       package: package(),
 
       # docs
-      name: "Membrane Plugin: Template",
+      name: "Membrane Template plugin",
       source_url: @github_url,
       homepage_url: "https://membraneframework.org",
       docs: docs()
