@@ -8,7 +8,7 @@ defmodule Membrane.Template.Mixfile do
     [
       app: :membrane_template_plugin,
       version: @version,
-      elixir: "~> 1.12",
+      elixir: "~> 1.13",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -36,10 +36,10 @@ defmodule Membrane.Template.Mixfile do
 
   defp deps do
     [
-      {:membrane_core, "~> 0.7.0"},
-      {:ex_doc, "~> 0.24", only: :dev, runtime: false},
+      {:membrane_core, "~> 0.8.1"},
+      {:ex_doc, "~> 0.26", only: :dev, runtime: false},
       {:dialyxir, "~> 1.1", only: :dev, runtime: false},
-      {:credo, "~> 1.5", only: :dev, runtime: false}
+      {:credo, "~> 1.6.1", only: :dev, runtime: false}
     ]
   end
 
