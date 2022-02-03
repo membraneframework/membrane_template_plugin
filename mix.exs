@@ -19,7 +19,7 @@ defmodule Membrane.Template.Mixfile do
       package: package(),
 
       # docs
-      name: "Membrane Plugin: Template",
+      name: "Membrane Template plugin",
       source_url: @github_url,
       homepage_url: "https://membraneframework.org",
       docs: docs()
@@ -39,16 +39,16 @@ defmodule Membrane.Template.Mixfile do
     [
       {:membrane_core, "~> 0.8.1"},
       {:unifex, "~> 0.7.0"},
-      {:ex_doc, "~> 0.26", only: :dev, runtime: false},
-      {:dialyxir, "~> 1.1", only: :dev, runtime: false},
-      {:credo, "~> 1.6.1", only: :dev, runtime: false}
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+      {:dialyxir, ">= 0.0.0", only: :dev, runtime: false},
+      {:credo, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 
   defp package do
     [
       maintainers: ["Membrane Team"],
-      licenses: ["Apache 2.0"],
+      licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => @github_url,
         "Membrane Framework Homepage" => "https://membraneframework.org"
@@ -62,6 +62,7 @@ defmodule Membrane.Template.Mixfile do
     [
       main: "readme",
       extras: ["README.md", "LICENSE"],
+      formatters: ["html"],
       source_ref: "v#{@version}",
       nest_modules_by_prefix: [Membrane.Template]
     ]
