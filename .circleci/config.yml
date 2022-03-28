@@ -21,7 +21,6 @@ jobs:
       - checkout
       - restore_mix_cache
       - run: mix deps.get
-      - run: mix compile --force --warnings-as-errors
       - save_cache:
           key: mix-cache-{{ arch }}-{{ .Branch }}-{{ checksum "mix.lock" }}
           paths: ["deps", "_build"]
@@ -40,7 +39,7 @@ jobs:
       - restore_mix_cache
       - run: mix deps.get
       - run: mix format --check-formatted
-      - run: mix compile
+      - run: mix compile --force --warnings-as-errors
       - run: mix credo
       - run: mix docs && mix docs 2>&1 | (! grep -q "warning:")
       - run: asdf current elixir | awk '{print $2}' > .elixir_version
