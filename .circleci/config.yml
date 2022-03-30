@@ -38,6 +38,7 @@ jobs:
     steps:
       - checkout
       - restore_mix_cache
+      - run: mix deps.unlock --check-unused
       - run: mix deps.get
       - run: mix format --check-formatted
       - run: mix compile
