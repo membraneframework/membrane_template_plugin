@@ -12,10 +12,7 @@ defmodule Membrane.Template.Mixfile do
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      dialyzer: [
-        plt_file: {:no_warn, "priv/plts/dialyzer.plt"},
-        flags: [:error_handling]
-      ],
+      dialyzer: dialyzer(),
 
       # hex
       description: "Template Plugin for Membrane Multimedia Framework",
@@ -45,6 +42,22 @@ defmodule Membrane.Template.Mixfile do
       {:dialyxir, ">= 0.0.0", only: :dev, runtime: false},
       {:credo, ">= 0.0.0", only: :dev, runtime: false}
     ]
+  end
+
+  defp dialyzer() do
+    opts = [
+      plt_local_path: "priv/plts",
+      flags: [:error_handling]
+    ]
+
+    if System.get_env("CI") == "true" do
+      # Store core PLTs in cacheable directory for CI
+      # For development it's better to stick to default, $MIX_HOME based path
+      # to allow sharing core PLTs between projects
+      [plt_core_path: "priv/plts"] ++ opts
+    else
+      opts
+    end
   end
 
   defp package do
