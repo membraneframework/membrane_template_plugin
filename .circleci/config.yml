@@ -11,6 +11,13 @@ commands:
           keys:
             - v1-mix-deps-cache-{{ checksum "mix.lock" }}
             - v1-mix-deps-cache-
+  workspace_init:
+    steps:
+      - checkout
+      - restore_deps_cache
+      - run: mix deps.clean --unused
+      - run: mix deps.get
+      - save_deps_cache
   save_build_cache:
     parameters:
       env:
@@ -52,21 +59,6 @@ commands:
             - v1-dialyzer-cache-
 
 jobs:
-  get_deps:
-    docker:
-      - image: membraneframeworklabs/docker_membrane
-
-    working_directory: ~/app
-
-    steps:
-      - checkout
-      - restore_deps_cache
-      - run: mix deps.get
-      - save_deps_cache
-      - persist_to_workspace:
-          root: .
-          paths: "*"
-
   build_test:
     docker:
       - image: membraneframeworklabs/docker_membrane
@@ -76,8 +68,7 @@ jobs:
     working_directory: ~/app
 
     steps:
-      - attach_workspace:
-          at: .
+      - workspace_init
       - restore_build_cache:
           env: test
       - run: mix deps.compile
@@ -95,8 +86,7 @@ jobs:
     working_directory: ~/app
 
     steps:
-      - attach_workspace:
-          at: .
+      - workspace_init
       - restore_build_cache:
           env: test
       - run: mix compile
@@ -111,8 +101,7 @@ jobs:
     working_directory: ~/app
 
     steps:
-      - attach_workspace:
-          at: .
+      - workspace_init
       - restore_build_cache:
           env: dev
       - run: mix compile
@@ -130,13 +119,6 @@ workflows:
   version: 2
   build:
     jobs:
-      - get_deps
-      - build_test:
-          requires:
-            - get_deps
-      - test:
-          requires:
-            - get_deps
-      - lint:
-          requires:
-            - get_deps
+      - build_test
+      - test
+      - lint
