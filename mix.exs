@@ -38,7 +38,7 @@ defmodule Membrane.Template.Mixfile do
 
   defp deps do
     [
-      {:membrane_core, "~> 0.9.0"},
+      {:membrane_core, "~> 0.10.0"},
       {:unifex, "~> 0.7.0"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:dialyxir, ">= 0.0.0", only: :dev, runtime: false},
