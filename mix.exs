@@ -21,7 +21,6 @@ defmodule Membrane.Template.Mixfile do
       # docs
       name: "Membrane Template plugin",
       source_url: @github_url,
-      homepage_url: "https://membraneframework.org",
       docs: docs()
     ]
   end
