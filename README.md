@@ -6,9 +6,9 @@
 
 This repository contains a template for new plugins.
 
-Check out different branches for other flavours of template.
+Check out different branches for other flavors of this template.
 
-It is part of [Membrane Multimedia Framework](https://membraneframework.org).
+It's a part of the [Membrane Framework](https://membrane.stream).
 
 ## Installation
 
