@@ -6,7 +6,6 @@ defmodule Membrane.Template.Mixfile do
 
   def project do
     [
-      homepage_url: "https://membrane.stream",
       app: :membrane_template_plugin,
       version: @version,
       elixir: "~> 1.13",
@@ -22,7 +21,8 @@ defmodule Membrane.Template.Mixfile do
       # docs
       name: "Membrane Template plugin",
       source_url: @github_url,
-      docs: docs()
+      docs: docs(),
+      homepage_url: "https://membrane.stream"
     ]
   end
 
