@@ -1,3 +1,5 @@
 defmodule Membrane.Template do
-  @moduledoc false
+  @moduledoc """
+    Template for documentation.
+  """
 end
